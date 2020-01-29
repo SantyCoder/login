@@ -1,0 +1,470 @@
+progress{
+  display: inline-block; /*Add the correct display in IE 9-.*/
+  vertical-align: baseline; /*Add the correct vertical alignment in Chrome, Firefox, and Opera*/
+}
+/**
+ * Add the correct display in IE 10-.
+ * 1. Add the correct display in IE.
+ */
+[hidden] {
+  display: none;
+}
+/**
+ * 1. Change font properties to `inherit` in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+select,
+textarea {
+  font: inherit; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Restore the font weight unset by the previous rule.
+ */
+
+optgroup {
+  font-weight: bold;
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+html [type="button"], /* 1 */
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+}
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Change the border, margin, and padding in all browsers (opinionated).
+ */
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: darken($color: $accent-third-color, $amount: 20%);
+  display: inline-block; /* 1 */
+  font-size: 14px;
+  font-weight: $regular;
+  line-height: 18px;
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
+ */
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
+
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+label {
+  color: $accent-first-color;
+  display: block;
+  font-weight: $medium;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="text"],
+input[type="phone"],
+textarea,
+input[type="url"] {
+  background: $base-color;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 12px;
+  font-weight: $light;
+  outline: none;
+  padding: 8px 3%;
+  width: 100%;
+  &:hover {
+    border: 1px solid $accent-first-color;
+    transition: 0.4s;
+  }
+  &:focus {
+    color: $button-color;
+    border: 1px solid $button-color;
+    box-shadow: none;
+    transition: 0.4s;
+  }
+  &:disabled{
+    background: lighten($border-color, 18%);
+    color: $border-color;
+    pointer-events: none;
+  }
+}
+
+textarea {
+  min-height: 80px;
+  max-height: 80px;
+  padding: 8px 1%;
+  width: 98%;
+}
+
+button, 
+input[type="button"],
+input[type="submit"] {
+  background: $button-color;
+  border: none;
+  border-radius: 4px;
+  color: $base-color;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  padding: 12px 4%;
+  text-align: center;
+  &.btn-secondary {
+    background: $accent-third-color;
+    color: $base-color;
+  }
+  &.btn-accept{
+    background: $success-color;
+  }
+  &.btn-delete{
+    background: $brand-color;
+  }
+  &:hover {
+    opacity: 0.8;
+    transition: 0.6s;
+  }
+  &:disabled {
+    background: lighten($border-color, 10%);
+    cursor: not-allowed;
+    color: $border-color;
+    &:hover {
+      background: lighten($border-color, 10%);
+      box-shadow: 2px 2px 2px 2px rgba(red($border-color), green($border-color), blue($border-color), .1);
+      opacity: 1;
+    }
+  }
+}
+
+select {
+  appearance: none;
+  //background: $base-color url('assets/images/arrow-black.svg')  no-repeat 95% center;
+  background-size: 15px;
+  border: 1px solid $border-color;
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: $text-color;
+  outline: none;
+  padding: 7px 2%;
+  width: 100%;
+  &:hover {
+    box-shadow: inset 0 1px 2px rgba(65, 64, 66,.39), 0 -1px 1px $base-color, 0 1px 0 $base-color;
+    transition: 0.4s;
+  }
+  &:focus {
+    //background: $base-color url('assets/images/arrow-black.svg') no-repeat 95% center;
+    background-size: 15px;
+    transition: 0.4s;
+  }
+}
+
+form {
+  legend {
+    margin: 20px 0 20px 0;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    &.row {
+      >li {
+        padding-right: calc(#{$col-1}/4);
+        &:last-child {
+          padding-right: 0;
+        }
+        &.col-1 {
+          width: calc(#{$col-1} - (#{$col-1} / 4) );
+        }
+        &.col-2 {
+          width: calc(#{$col-2} - (#{$col-1} / 4) );
+        }
+        &.col-3 {
+          width: calc(#{$col-3} - (#{$col-1} / 4) );
+        }
+        &.col-4 {
+          width: calc(#{$col-4} - (#{$col-1} / 4) );
+        }
+        &.col-5 {
+          width: calc(#{$col-5} - (#{$col-1} / 4) );
+        }
+        &.col-6 {
+          width: calc(#{$col-6} - (#{$col-1} / 4) );
+        }
+        &.col-7 {
+          width: calc(#{$col-7} - (#{$col-1} / 4) );
+        }
+        &.col-8 {
+          width: calc(#{$col-8} - (#{$col-1} / 4) );
+        }
+        &.col-12 {
+          width: calc(#{$col-12} - (#{$col-1} / 4) );
+        }
+      }
+    }
+    li {
+      list-style: none;
+      padding-bottom: 35px;
+      position: relative;
+      label {
+        margin-bottom: 15px;
+      }
+      arca-cms-validate{
+        position: absolute;
+      }
+    }
+  }
+  fieldset {
+    p {
+      text-align: right;
+      margin-right: calc(#{$col-1}/4);
+      a {
+        margin-left: 20px;
+      }
+    }
+  }
+  p {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.radio, 
+.check-box {
+  position: relative;
+  input[type="checkbox"],
+  input[type="radio"]{
+    position: absolute;
+    visibility: hidden;
+    &:checked{
+      +label{
+        span{
+          background: $brand-color;
+          border: 1px solid $brand-color;
+          &:before{
+            background: $base-color;
+            content: '';
+          }
+        }
+      }
+    }
+  }
+  label {
+    display: inline-block;
+    margin-bottom: 0;
+    outline: none;
+    user-select: none;
+    span {
+      border: 1px solid $border-color;
+      border-radius: 50%;
+      display: inline-block;
+      height: 15px;
+      margin-right: 2px;
+      position: relative;
+      width: 15px;
+      &:before{
+        background: $border-color;
+        bottom: 0;  
+        border-radius: 50%;
+        height: 7px;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 7px;
+      }
+    }
+    &:focus{
+      span{
+        border-color: $brand-color;
+        transition: 0.4s;
+        &:before{
+          background: $brand-color;
+          content: '';
+          transition: 0.4s;
+        }
+      }
+    }
+    &:hover {
+      transition: 0.6s;
+      span{
+        border-color: $brand-color;
+        transition: 0.6s;
+      }
+    }
+  }
+}
+.check-box{
+  input[type="checkbox"]:checked{
+    +label{
+      span{
+        background: $brand-color;
+        border: 1px solid $brand-color;
+        &:before{
+          background: none;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  label{
+    span{
+      border-radius: 3px;
+      position: relative;
+      top: 4px;
+        &:before{
+          background: none;
+          border: 2px solid $base-color;
+          border-radius: 0;
+          border-right: none;
+          border-top: none;
+          content: '';
+          height: 3px;
+          left: 1px;
+          opacity: 0;
+          position: absolute;
+          transition: 0.6s;
+          transform: rotate(-45deg);
+          top: -2px;
+          width: 8px;
+        }
+    }
+  }
+}
+
+@media(max-width: $mobile) {
+  select, 
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="phone"],
+  input[type="url"]{
+    padding: 2% 3%;
+  }
+}

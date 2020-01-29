@@ -1,0 +1,21 @@
+demo-app-validate {
+    display: block;
+    min-height: 14px;
+    position: relative;
+    width: 100%;
+    .msg-alert {
+        bottom: -4px;
+        color: $alert-color;
+        font-family: $complementary-typography;
+        font-size: 12px;
+        left: 4px;
+        position: absolute;
+        width: 100%;
+        i {
+            font-size: 16px;
+            position: absolute;
+            right: 8px;
+            top: -2px;
+        }
+    }
+}

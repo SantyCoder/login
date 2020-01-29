@@ -1,0 +1,355 @@
+.modal {
+  background-color: rgba($support-color, 0.6);
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  transition: all 0.3s;
+  visibility: hidden;
+  width: 100%;
+  z-index: 2;
+
+  /*.loader {
+        animation: twist 1.5s linear infinite;
+        border: 3px solid transparent;
+        border-bottom-color: $accent-first-color;
+        border-radius: 50%;
+        border-top-color: $accent-first-color;
+        display: none;
+        height: 3.5em;
+        margin: 0 auto;
+        width: 3.5em;
+        &:before {
+            content: '';
+            display: block;
+            margin: auto;
+            width: 0.75em;
+            height: 0.75em;
+            border: 3px solid $accent-first-color;
+            border-radius: 50%;
+            animation: pulse 1s alternate ease-in-out infinite;
+        }
+    }*/
+  &.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+
+    .content {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .content {
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    transform: scale(0.8);
+    transition: all 0.4s;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+
+    >div {
+      box-shadow: 0 0 12px 0 rgba($support-color, 0.25);
+      display: inline-block;
+      max-width: 300px;
+      vertical-align: middle;
+      width: $col-4;
+    }
+
+    .modal-header {
+      background: $base-color;
+      border-radius: 12px 12px 0 0;
+      padding: 22px 18px 0 18px;
+      position: relative;
+
+      .icon-close {
+        color: $base-color;
+        cursor: pointer;
+        font-size: 32px;
+        position: absolute;
+        right: 8px;
+        top: 8px;
+
+        &:hover {
+          opacity: 0.6;
+          transition: 0.4s;
+          text-decoration: none;
+        }
+      }
+
+      h2 {
+        color: $support-color;
+        font-size: 24px;
+        letter-spacing: 0.07px;
+        margin: 0;
+        text-align: left;
+
+        i {
+          font-size: 14px;
+        }
+      }
+
+      /*span{
+                background: $brand-color;
+                box-shadow: 1px -2px -2px 1px rgba(255, 68, 17, 0.2);
+                border-radius: 50%;
+                color: $base-color;
+                font-size: 32px;
+                height: 48px;
+                left: 0;
+                line-height: 48px;
+                margin: auto;
+                position: absolute;
+                right: 0;
+                text-align: center;
+                top: -24px;
+                width: 48px;
+            }*/
+    }
+
+    .modal-body {
+      background-color: $base-color;
+      border-radius: 0 0 12px 12px;
+      padding: 8px 18px 22px 18px;
+
+      p {
+        color: $modal-color;
+        font-size: 14px;
+        line-height: 18px;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        word-break: break-all;
+      }
+
+      ul {
+        list-style: none;
+        margin-top: 32px;
+        padding: 0;
+
+        li {
+          display: inline-block;
+
+          &:nth-child(n+2) {
+            margin-left: 12px;
+          }
+
+          input[class^="btn"] {
+            display: block;
+            min-width: 110px;
+          }
+        }
+      }
+    }
+
+    input[type="button"] {
+      background-color: transparent;
+      background-image: none;
+      box-shadow: none;
+      color: $brand-color;
+      cursor: pointer;
+      outline: none;
+
+      &:hover {
+        background-color: darken($base-color, 8%);
+        box-shadow: 0 5px 8px -3px rgba($support-color, 0.25);
+      }
+    }
+
+    .window {
+      background-color: $base-color;
+      box-shadow: 0 21px 12px -10px rgba($support-color, 0.25);
+      border-radius: 6px;
+      height: 431px;
+      padding: 32px 36px;
+      position: relative;
+      width: 396px;
+
+      .icon-close {
+        color: $brand-color;
+        cursor: pointer;
+        font-size: 36px;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+      }
+
+      h3 {
+        font-size: 20px;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 14px;
+        font-weight: $regular;
+        margin: 0;
+      }
+
+      .overview {
+        max-height: 280px;
+        margin: 28px 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+
+      form {
+        position: relative;
+
+        &:before {
+          background: $brand-color;
+          content: '';
+          height: 3px;
+          margin: 0 auto;
+          position: absolute;
+          top: -12px;
+          width: 16px;
+        }
+
+        ul {
+          width: 100%;
+
+          li {
+            margin: 12px 0;
+          }
+
+          select,
+          input[type="text"] {
+            width: 90%;
+          }
+
+          .check-box {
+            label {
+              margin-top: 4px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  /*&.success {
+        .content {
+            .modal-header {
+                background: $success-color;
+            }
+            .modal-body {
+                ul {
+                    li {
+                        &:last-child {
+                            input[type="submit"] {
+                                background-image: linear-gradient(to bottom, darken($success-color, 4%), $success-color);
+                                box-shadow: 0 5px 8px -3px rgba($success-color, 0.25);
+                                &:hover {
+                                    background-image: linear-gradient(to bottom, $success-color, darken($success-color, 4%));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.warning {
+        .content {
+            .modal-header {
+                background: $warning-color;
+            }
+            .modal-body {
+                ul {
+                    li {
+                        &:last-child {
+                            input[type="submit"] {
+                                background-image: linear-gradient(to bottom, $accent-first-color, $warning-color);
+                                box-shadow: 0 5px 8px -3px rgba($warning-color, 0.25);
+                                &:hover {
+                                    background-image: linear-gradient(to bottom, $warning-color, $accent-first-color);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.error {
+        .content {
+            .modal-header {
+                background: $alert-color;
+            }
+            .modal-body {
+                ul {
+                    li {
+                        &:last-child {
+                            input[type="submit"] {
+                                background-image: linear-gradient(to bottom, darken($alert-color, 4%), $alert-color);
+                                box-shadow: 0 5px 8px -3px rgba($alert-color, 0.25);
+                                &:hover {
+                                    background-image: linear-gradient(to bottom, $alert-color, darken($alert-color, 4%));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }*/
+  &.executing {
+    .icon-close {
+      display: none;
+    }
+
+    .modal-body {
+      .loader {
+        display: flex;
+      }
+
+      p,
+      ul {
+        display: none;
+      }
+    }
+  }
+}
+
+@media(max-width: $tablet-portrait) {
+  .modal {
+    .content {
+      >div {
+        width: $col-5;
+      }
+    }
+  }
+}
+
+@media(max-width: $tablet) {
+  .modal {
+    .content {
+      >div {
+        width: $col-6;
+      }
+    }
+  }
+}
+
+@media(max-width: $mobile) {
+  .modal {
+    .content {
+      >div {
+        width: $col-10;
+      }
+    }
+  }
+}

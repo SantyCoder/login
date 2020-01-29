@@ -1,0 +1,24 @@
+<div class="modal {{show}} {{action}}" [class.executing]="executing">
+  <div class="content">
+    <div>
+      <div class="modal-header">
+        <!--<a class="icon-close" (click)="close($event)"></a>-->
+        <h2>
+          <!--<i class="icon-{{action}}"></i>-->
+          {{title}}
+        </h2>
+      </div>
+      <div class="modal-body">
+        <p [innerHTML]="message"></p>
+        <ul>
+          <li>
+            <input class="btn-default cancel" type="button" (click)="close($event)" value="Cancelar" />
+          </li>
+          <li>
+            <input class="btn-default" type="submit" (click)="execute()" value="Aceptar" />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

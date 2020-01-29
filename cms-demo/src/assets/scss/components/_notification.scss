@@ -1,0 +1,109 @@
+.notification {
+    background-color: rgba($support-color, 0.4);
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    transition: all .4s;
+    visibility: hidden;
+    width: 100%;
+    z-index: 3;
+    .box {
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        transform: scale(.6);
+        transition: all .4s;
+        &:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+        .content {
+            background: $base-color;
+            border-left: 8px solid $brand-color;
+            border-radius: 4px;
+            box-shadow: 0 0 12px 0 rgba($support-color, 0.25);
+            display: inline-block;
+            min-height: 96px;
+            min-width: 486px;
+            vertical-align: middle;
+            padding: 16px;
+            position: relative;
+            &.error {
+                border-left-color: $alert-color;
+                i, span {
+                    color: $alert-color;
+                }
+            }
+            &.success {
+                border-left-color: $success-color;
+                i, span {
+                    color: $success-color;
+                }
+            }
+            i {
+                bottom: 0;
+                color: $brand-color;
+                font-size: 32px;
+                height: 30px;
+                line-height: 30px;
+                left: 12px;
+                margin: auto;
+                position: absolute;
+                text-align: center;
+                top: 0;
+                width: 30px;
+
+            }
+            h6 {
+                font-size: 20px;
+                margin: 0 0 0 44px;
+                padding: 0;
+                text-align: left;
+            }
+            p {
+                font-size: 14px;
+                margin: 0 0 0 44px;
+                padding: 0;
+                text-align: left;
+            }
+            span {
+                cursor: pointer;
+                color: $brand-color;
+                font-size: 36px;
+                height: 36px;
+                line-height: 36px;
+                position: absolute;
+                right: 4px;
+                text-align: center;
+                top: 4px;
+                width: 36px
+            }
+        }
+    }
+    &.open {
+        opacity: 1;
+        visibility: visible;
+        .box {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
+
+@media(max-width: $tablet) {
+    .notification {
+        .box {
+            .content {
+                min-width: calc(90% - 32px);
+            }
+        }
+    }
+}

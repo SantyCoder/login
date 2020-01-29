@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+//- Theme variables
+@import 'assets/scss/config/_variables';
+//- Grid
+@import 'assets/scss/layout/_grid';
+//- Style Base
+@import 'assets/scss/base/_document';
+@import 'assets/scss/base/_embedded';
+@import 'assets/scss/base/_forms';
+@import 'assets/scss/base/_grouping';
+@import 'assets/scss/base/_interactive';
+@import 'assets/scss/base/_links';
+@import 'assets/scss/base/_scripting';
+@import 'assets/scss/base/_sections';
+@import 'assets/scss/base/_table';
+@import 'assets/scss/base/_text';
+//- Components
+@import 'assets/scss/components/_messages';
+@import 'assets/scss/components/_modal';
+@import 'assets/scss/components/_notification';

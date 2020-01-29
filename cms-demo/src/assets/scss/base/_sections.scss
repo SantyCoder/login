@@ -1,0 +1,51 @@
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  background: $base-color;
+  color: $text-color;
+  font-family: $main-typography;
+  font-size: 12px;
+  font-weight: $regular;
+  margin: 0;
+  &.open{
+    height: 100%;
+    overflow-y: hidden;
+    padding-right: 15px;
+  }
+}
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ * 2. Add the correct display in IE.
+ */
+article,
+aside,
+footer,
+header,
+main, /* 2 */
+nav,
+section{
+  display: block;
+}
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1{
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+h2, h3, h4, h5, h6 {
+  color: $text-color;
+  font-family: $complementary-typography;
+  font-weight: $bold;
+  margin: 0 0 30px 0;
+}
+
+h2 {
+  font-size: 16px;
+  padding: calc(#{$col-1}/4);
+}

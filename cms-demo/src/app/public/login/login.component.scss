@@ -1,0 +1,56 @@
+@import '~src/assets/scss/config/_variables.scss';
+.login {
+  height: 100vh;
+  background: rgba($color: $border-color, $alpha: .15);
+  position: relative;
+  >div {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+    >.row {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  .col-8 {
+    background-image: linear-gradient(to top, #083468, #184783, #265b9f, #326fbc, #3e85da);
+    border-radius: 6px 25px 6px 20px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 8px 2px rgba(8, 8, 8, 0.1);
+    .col-6 {
+      box-sizing: border-box;
+      img {
+        height: 125px;
+        margin-top: 30px;
+      }
+      h2 {
+        font-weight: $bold;
+        font-size: 16px;
+        margin: 0;
+        padding: 12px 0;
+        text-align: center;
+      }
+      &:last-child {
+        background: $base-color;
+        border-radius: 0 20px 6px 0;
+        text-align: left;
+        padding: 4% 2%;
+        p{
+          text-align: left;
+        }
+        admin-gulf-validate{
+          right: 0;
+        }
+      }
+    }
+  }
+}

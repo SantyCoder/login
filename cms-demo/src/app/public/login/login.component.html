@@ -1,0 +1,43 @@
+<section class="login">
+  <div>
+    <div class="row">
+      <div class="col-8 center">
+        <div class="row">
+          <div class="col-6">
+            <h1>
+              Logo
+            </h1>
+          </div>
+          <div class="col-6">
+            <form autocomplete="off" [formGroup]="frmLogin" (ngSubmit)="onSubmit()">
+              <h2>Inicio de Sesi&oacute;n</h2>
+              <fieldset>
+                <legend>
+                  Bienvenido al administrador web. Para iniciar sesi&oacute;n por favor,
+                  ingrese su nombre de usuario y contrase&ntilde;a.
+                </legend>
+                <ul>
+                  <li>
+                    <label for="txtUser">Usuario</label>
+                    <input id="txtUser" type="text" name="username" formControlName="username">
+                    <demo-app-validate [control]="frmLogin.controls.username"></demo-app-validate>
+                  </li>
+                  <li>
+                    <label for="txtPassword">Contrase&ntilde;a</label>
+                    <input id="txtPassword" type="password" name="password" formControlName="password">
+                    <demo-app-validate [control]="frmLogin.controls.password"></demo-app-validate>
+                  </li>
+                </ul>
+                <p>
+                  <span [class.loading]="sending">
+                    <input type="submit" value="" [disabled]="!frmLogin.valid" value="Iniciar Sesi&oacute;n">
+                  </span>
+                </p>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

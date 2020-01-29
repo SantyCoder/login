@@ -1,0 +1,156 @@
+table {
+  background: $base-color;
+  border-collapse: collapse;
+  border-radius: 4px;
+  box-shadow: 1px 1px 4px 0px rgba(8,8,8,0.2);
+  margin: 2% auto 0 auto;
+  width: 100%;
+  caption {
+    font-family: $complementary-typography;
+    font-size: 16px;
+    font-weight: $bold;
+  }
+  thead {
+    tr {
+      th {
+        border-bottom: 1px solid lighten($color: $text-color, $amount: 80%);
+        font-family: $complementary-typography;
+        font-size: 13px;
+        padding: 20px 2%;
+        text-align: left;
+      }
+    }
+  }
+  tbody {
+    tr {
+      position: relative;
+      transition: 0.4s;
+        &:hover {
+          background: lighten($color: $brand-color, $amount: 47%);
+          td:first-child{
+            &:after{
+              opacity: 1;
+            }
+          }
+        }
+        td {
+          padding: 20px 2%;
+          word-break: break-all;
+          &:first-child{
+            position: relative;
+            &:after{
+              background: $brand-color;
+              content: '';
+              height: 100%;
+              left: 0;
+              opacity: 0;
+              position: absolute;
+              transition: opacity 0.4s ease-in-out;
+              top: 0;
+              width: 2px;
+            }
+          }
+          img {
+            height: auto;
+            max-width: 100px;
+          }
+          a{
+            display: block;
+            font-size: 24px;
+            text-align: center;
+            width: 35px;
+            &.icon-cancel{
+              color: $accent-first-color;
+              &.disabled{
+                color: $border-color;
+                cursor: not-allowed;
+                pointer-events: none;
+              }
+            }
+            &.icon-delete {
+              color: $alert-color;
+            }
+            &.icon-campaign{
+              color: $update-color;
+            }
+            &.icon-duplicate,
+            &.icon-layouts{
+              color: $success-color;
+            }
+            &:hover {
+              opacity: 0.6;
+              text-decoration: none;
+              transition: 0.6;
+            }
+          }
+        }
+        &:last-child {
+          border: none;
+        }
+      }
+    }
+  arca-cms-table {
+    display: contents;
+  }
+  th, td{
+    &[class^="col-"]{
+      float: none;
+    }
+  }
+  &.templates{
+    tbody tr td img{
+      max-width: 60px;
+    }
+  }
+}
+
+@media(max-width: $mobile) {
+  table {
+    display: block;
+    max-width: 98%;
+    thead{
+      display: block;
+      float: left;
+      tr{
+        th{
+          border-bottom: none;
+          display: block;
+          padding: 20px 10px;
+        }
+      }
+    }
+    tbody {
+      border-left: 1px solid lighten($color: $text-color, $amount: 80%);
+      display: block;
+      overflow-x: auto;
+      position: relative;
+      white-space: nowrap;
+      width: auto;
+      tr {
+        display: inline-block;
+        position: relative;
+        vertical-align: top;
+        td {
+          display: block;
+          padding: 20px;
+          img {
+            max-width: 60px;
+          }
+          &:first-child{
+            position: relative;
+            &:after{
+              height: 3px;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    th, td{
+      &[class^="col-"]{
+        float: none;
+        width: auto;
+      }
+    }
+  }
+}
